@@ -1,0 +1,28 @@
+
+{{define "index"}}
+
+{{template "header" .}}
+
+  <main class="px-3">
+    <h1>Home page</h1>
+    <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, ipsam est asperiores eveniet delectus dicta voluptate doloremque, quas quae possimus culpa, explicabo ad libero et id? Expedita maxime fugit sapiente.</p>
+    
+    {{range .Articles}} 
+    <div class="alert alert-dark">
+      <h2>{{.Title}}</h2>
+      <p class="lead">{{.Anons}}</p>
+      <a href="/post/{{.Id}}" class="btn btn-secondary">Learn more about this article</a>
+    </div>
+    {{else}}
+    <p class="lead">You don't have any articles</p>
+    {{end}}
+
+    <p class="lead">
+      <a href="#" class="btn btn-lg btn-light fw-bold border-white bg-white">Learn more</a>
+    </p>
+  </main>
+
+  {{template "footer"}}
+
+{{end}}
+

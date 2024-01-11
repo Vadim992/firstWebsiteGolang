@@ -1,0 +1,30 @@
+
+{{define "header"}}
+
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/5.3/examples/cover/cover.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body  class="d-flex h-100 text-center text-bg-dark body-background">
+    
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="mb-auto">
+    <div>
+      <h3 class="float-md-start mb-0">myWeb</h3>
+      <nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link fw-bold py-1 px-0 {{if eq .ActivePage `/`}} active {{end}}"  href="/">Home</a>
+        <!-- <a class="nav-link fw-bold py-1 px-0" href="/contacts">Contacts</a> -->
+        <a  class="nav-link fw-bold py-1 px-0 {{if eq .ActivePage `/create/`}} active {{end}}" href="/create/">Create a post</a>
+      </nav>
+    </div>
+  </header>
+
+  {{end}}
